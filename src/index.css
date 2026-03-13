@@ -55,10 +55,7 @@
   pointer-events: none;
 }
 
-.glow-card:hover::before {
-  background: linear-gradient(to bottom right, rgba(0, 240, 255, 0.5), rgba(138, 43, 226, 0.2));
-  transition: background 0.5s ease;
-}
+
 
 /* Button Micro-interactions */
 .btn-primary {
