@@ -52,7 +52,7 @@ export default function Features() {
           <div className="feature-card glow-card glass-panel rounded-3xl-card p-8 md:p-10 flex flex-col min-h-[450px] relative overflow-hidden group">
             
             {/* Elegant Sun / Architecture SVG */}
-            <div className="absolute top-8 right-8 w-40 h-40 opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+            <div className="absolute top-8 right-8 w-24 h-24 opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
               <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-neon-cyan drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">
                 {/* Glowing Sun core */}
                 <circle cx="120" cy="90" r="30" fill="url(#sunGlow)" className="animate-pulse" />
@@ -98,7 +98,7 @@ export default function Features() {
           <div className="feature-card glow-card glass-panel rounded-3xl-card p-8 md:p-10 flex flex-col min-h-[450px] relative overflow-hidden group">
             
             {/* Financial Model SVG - Absolute but restricted to top-right to prevent text overlap */}
-            <div className="absolute top-8 right-8 w-48 h-48 opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+            <div className="absolute top-8 right-8 w-24 h-24 opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
               <svg viewBox="0 0 200 200" fill="none" className="w-full h-full">
                 {/* 3D Bar Chart Blocks */}
                 <g className="text-neon-purple drop-shadow-[0_0_15px_rgba(138,43,226,0.3)]">
