@@ -28,10 +28,6 @@ export default function Features() {
   return (
     <section id="features" ref={sectionRef} className="py-24 md:py-32 px-4 md:px-12 bg-[#05050A] relative overflow-hidden flex flex-col items-center">
       
-      {/* Decorative Glow Elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-purple/5 blur-[120px] rounded-full pointer-events-none"></div>
-
-      {/* Constraining wrapper added here! */}
       <div className="w-full max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
@@ -48,45 +44,41 @@ export default function Features() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           
-          {/* Card 1: Multifamily First (Improved SVG Iconography) */}
-          <div className="feature-card glow-card glass-panel rounded-3xl-card p-8 md:p-10 flex flex-col min-h-[450px] relative overflow-hidden group">
+          {/* Card 1: Multifamily First */}
+          <div className="feature-card bg-[#111116] border border-white/5 rounded-3xl p-8 md:p-10 flex flex-col min-h-[400px] relative overflow-hidden transition-colors hover:bg-[#15151A]">
             
-            {/* Elegant Sun / Architecture SVG */}
-            <div className="absolute top-8 right-8 w-24 h-24 opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-              <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-neon-cyan drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">
-                {/* Glowing Sun core */}
-                <circle cx="120" cy="90" r="30" fill="url(#sunGlow)" className="animate-pulse" />
-                <circle cx="120" cy="90" r="45" stroke="#00F0FF" strokeWidth="1" strokeDasharray="4 8" className="origin-center animate-[spin_10s_linear_infinite]" />
+            {/* Vercel-style Tiny SVG */}
+            <div className="absolute top-8 right-8 w-16 h-16 opacity-70">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-neon-cyan">
+                {/* Building 1 */}
+                <path d="M 20 80 L 20 40 L 40 40 L 40 80 Z" stroke="#00F0FF" strokeWidth="2" strokeLinejoin="round" fill="none" />
+                <path d="M 15 40 L 30 25 L 45 40" stroke="#00F0FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M 30 25 L 30 10" stroke="#00F0FF" strokeWidth="1" strokeDasharray="2 2" />
                 
-                {/* Abstract Architect Buildings */}
-                <path d="M 60 180 L 60 120 L 100 120 L 100 180 Z" stroke="#00F0FF" strokeWidth="1.5" className="fill-surface" />
-                <path d="M 140 180 L 140 100 L 190 100 L 190 180 Z" stroke="#00F0FF" strokeWidth="1.5" className="fill-surface" />
+                {/* Building 2 */}
+                <path d="M 55 80 L 55 30 L 75 30 L 75 80 Z" stroke="#00F0FF" strokeWidth="2" strokeLinejoin="round" fill="none" opacity="0.6" />
+                <path d="M 50 30 L 65 15 L 80 30" stroke="#00F0FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6" />
                 
-                {/* Roof Solar Panels */}
-                <path d="M 50 110 L 80 90 L 110 110 Z" fill="#00F0FF" fillOpacity="0.2" stroke="#00F0FF" strokeWidth="2" />
-                <path d="M 130 90 L 165 70 L 200 90 Z" fill="#8A2BE2" fillOpacity="0.2" stroke="#8A2BE2" strokeWidth="2" />
-                
-                <defs>
-                  <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
-                    <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.5"/>
-                    <stop offset="100%" stopColor="#00F0FF" stopOpacity="0"/>
-                  </radialGradient>
-                </defs>
+                {/* Signal Rings */}
+                <circle cx="30" cy="10" r="15" stroke="#00F0FF" strokeWidth="1" strokeDasharray="1 4" opacity="0.4">
+                   <animate attributeName="r" values="5;20;5" dur="3s" repeatCount="indefinite" />
+                   <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite" />
+                </circle>
               </svg>
             </div>
             
-            <div className="relative z-10 flex flex-col h-full">
-              <div className="w-12 h-12 rounded-xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
-                <span className="font-mono font-bold text-neon-cyan text-lg">01</span>
+            <div className="relative z-10 flex flex-col h-full w-4/5">
+              <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                <span className="font-mono font-medium text-neon-cyan text-sm">01</span>
               </div>
               
               <div className="mt-auto flex-1 flex flex-col justify-end">
-                <h3 className="font-sans font-bold text-3xl md:text-4xl text-white mb-4">Multifamily First</h3>
-                <p className="font-sans text-muted leading-relaxed text-base md:text-lg">
+                <h3 className="font-sans font-bold text-3xl md:text-3xl text-white mb-4">Multifamily First</h3>
+                <p className="font-sans text-muted leading-relaxed text-sm md:text-base font-light">
                   Designed exclusively for owner-operators. Transform unused roof and parking space into a persistent revenue stream, without disrupting residents.
                 </p>
                 <div className="mt-8">
-                   <button className="flex items-center gap-2 font-sans font-semibold text-white/80 hover:text-white transition-colors group w-max">
+                   <button className="flex items-center gap-2 font-sans font-medium text-sm text-white/90 hover:text-white transition-colors group w-max">
                      Explore the process <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                    </button>
                 </div>
@@ -94,48 +86,34 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Card 2: Elevate Asset Value (Fixed Layout Overlay & Robust Animation) */}
-          <div className="feature-card glow-card glass-panel rounded-3xl-card p-8 md:p-10 flex flex-col min-h-[450px] relative overflow-hidden group">
+          {/* Card 2: Elevate Asset Value */}
+          <div className="feature-card bg-[#111116] border border-white/5 rounded-3xl p-8 md:p-10 flex flex-col min-h-[400px] relative overflow-hidden transition-colors hover:bg-[#15151A]">
             
-            {/* Financial Model SVG - Absolute but restricted to top-right to prevent text overlap */}
-            <div className="absolute top-8 right-8 w-24 h-24 opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-              <svg viewBox="0 0 200 200" fill="none" className="w-full h-full">
-                {/* 3D Bar Chart Blocks */}
-                <g className="text-neon-purple drop-shadow-[0_0_15px_rgba(138,43,226,0.3)]">
-                  {/* Bar 1 */}
-                  <rect x="20" y="140" width="30" height="40" fill="#8A2BE2" fillOpacity="0.3" stroke="#8A2BE2" strokeWidth="1.5">
-                    <animate attributeName="height" values="10;40;40;10" dur="4s" repeatCount="indefinite" />
-                    <animate attributeName="y" values="170;140;140;170" dur="4s" repeatCount="indefinite" />
-                  </rect>
-                  {/* Bar 2 */}
-                  <rect x="70" y="100" width="30" height="80" fill="#8A2BE2" fillOpacity="0.5" stroke="#8A2BE2" strokeWidth="1.5">
-                    <animate attributeName="height" values="20;80;80;20" dur="4s" repeatCount="indefinite" begin="0.2s" />
-                    <animate attributeName="y" values="160;100;100;160" dur="4s" repeatCount="indefinite" begin="0.2s" />
-                  </rect>
-                  {/* Bar 3 */}
-                  <rect x="120" y="50" width="30" height="130" fill="#00F0FF" fillOpacity="0.4" stroke="#00F0FF" strokeWidth="1.5">
-                    <animate attributeName="height" values="30;130;130;30" dur="4s" repeatCount="indefinite" begin="0.4s" />
-                    <animate attributeName="y" values="150;50;50;150" dur="4s" repeatCount="indefinite" begin="0.4s" />
-                  </rect>
-                </g>
-                
-                {/* Leaf element wrapping the asset */}
-                <path d="M 170 30 C 190 20, 200 40, 180 60 C 160 80, 150 60, 170 30 Z" stroke="#00F0FF" strokeWidth="2" fill="none" strokeDasharray="100" strokeDashoffset="0">
-                  <animate attributeName="stroke-dashoffset" values="100;0;100" dur="6s" repeatCount="indefinite" />
+            {/* Vercel-style Tiny Bar Chart SVG */}
+            <div className="absolute top-8 right-8 w-16 h-16 opacity-80">
+              <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+                {/* Bar 1 */}
+                <rect x="25" y="60" width="10" height="20" fill="#8A2BE2" />
+                {/* Bar 2 */}
+                <rect x="45" y="40" width="10" height="40" fill="#8A2BE2" />
+                {/* Bar 3 */}
+                <rect x="65" y="20" width="10" height="60" fill="#00F0FF" />
+                {/* Up Arrow Curve */}
+                <path d="M 60 15 C 75 5, 90 10, 85 25" stroke="#00F0FF" strokeWidth="2" strokeLinecap="round" fill="none">
+                  <animate attributeName="stroke-dasharray" values="0 100; 100 100" dur="2s" repeatCount="indefinite" />
                 </path>
-                
                 {/* Baseline Grid */}
-                <path d="M 10 180 L 190 180" stroke="white" strokeWidth="1" strokeOpacity="0.2" />
+                <path d="M 15 80 L 85 80" stroke="white" strokeWidth="1" strokeOpacity="0.1" />
               </svg>
             </div>
             
-            <div className="relative z-10 flex flex-col h-full right-0">
-              <div className="w-12 h-12 rounded-xl bg-neon-purple/20 border border-neon-purple/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(138,43,226,0.2)]">
-                <span className="font-mono font-bold text-neon-purple text-lg">02</span>
+            <div className="relative z-10 flex flex-col h-full w-4/5">
+              <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                <span className="font-mono font-medium text-neon-purple text-sm">02</span>
               </div>
-              <div className="mt-auto flex-1 flex flex-col justify-end w-4/5 md:w-3/4">
-                <h3 className="font-sans font-bold text-3xl md:text-4xl text-white mb-4 leading-tight">Elevate Asset Value</h3>
-                <p className="font-sans text-white/80 leading-relaxed text-base md:text-lg font-light">
+              <div className="mt-auto flex-1 flex flex-col justify-end">
+                <h3 className="font-sans font-bold text-3xl md:text-3xl text-white mb-4 leading-tight">Elevate Asset Value</h3>
+                <p className="font-sans text-muted leading-relaxed text-sm md:text-base font-light">
                   Residents powered by PearlX save money on their utility bills. Elevate broader property value while hitting your ESG targets.
                 </p>
               </div>
@@ -143,22 +121,23 @@ export default function Features() {
           </div>
 
           {/* Card 3: How it Works (Flow Diagram) */}
-          <div className="feature-card md:col-span-2 glow-card glass-panel rounded-3xl-card p-6 md:p-12 flex flex-col lg:flex-row items-center gap-8 md:gap-16 group min-h-[400px]">
-            <div className="flex-1 w-full relative z-10 order-2 lg:order-1">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-                <span className="font-mono font-bold text-blue-400 text-lg">03</span>
+          <div className="feature-card md:col-span-2 bg-gradient-to-br from-[#111116] to-[#0A101D] border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-8 md:gap-16 group min-h-[350px]">
+            <div className="flex-1 w-full lg:w-1/2 relative z-10 order-2 lg:order-1 flex flex-col justify-center">
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
+                <span className="font-mono font-medium text-blue-400 text-sm">03</span>
               </div>
-              <h3 className="font-sans font-bold text-4xl md:text-5xl text-white mb-6">How It Works</h3>
-              <p className="font-sans text-muted leading-relaxed text-base md:text-lg max-w-2xl mb-8">
+              <h3 className="font-sans font-bold text-3xl md:text-4xl text-white mb-4">How It Works</h3>
+              <p className="font-sans text-muted leading-relaxed text-sm md:text-base font-light mb-8 max-w-md">
                 Clean energy with zero capital expenditures. We architect, install, manage, and maintain the complex system at no cost to you. The energy generated is monetized, creating instant Net Operating Income.
               </p>
-              <button className="relative w-full sm:w-auto overflow-hidden bg-white text-background px-8 py-4 rounded-full font-sans font-bold text-sm transition-transform duration-300 hover:scale-[1.03] shadow-[0_0_20px_rgba(255,255,255,0.1)] flex justify-center text-center">
+              <button className="relative w-max overflow-hidden bg-white text-background px-6 py-3 rounded-full font-sans font-bold text-sm transition-transform duration-300 hover:scale-[1.03]">
                 Explore the Protocol Details
               </button>
             </div>
             
-            <div className="flex-1 w-full order-1 lg:order-2 flex justify-center items-center h-[250px] lg:h-full relative shrink-0 z-0">
-               <svg className="w-full h-full max-h-[300px] overflow-visible" viewBox="0 0 400 200" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <div className="flex-1 w-full lg:w-1/2 order-1 lg:order-2 flex justify-end items-center h-[150px] lg:h-[200px] relative shrink-0 z-0 pr-4">
+               {/* Original Flow SVG but scaled massively down to match Vercel styling */}
+               <svg className="w-full max-w-[400px] h-full overflow-visible" viewBox="0 0 400 200" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <defs>
                     <linearGradient id="flowGlow" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#00F0FF" />
@@ -168,54 +147,53 @@ export default function Features() {
                   </defs>
 
                   {/* 1. Solar Panel Node (Left) */}
-                  <g className="group-hover:drop-shadow-[0_0_10px_#00F0FF] transition-all duration-500">
-                    <rect x="20" y="80" width="40" height="40" rx="8" className="fill-surface stroke-white/20" />
-                    <line x1="25" y1="90" x2="55" y2="90" className="stroke-neon-cyan path-draw" />
-                    <line x1="25" y1="100" x2="55" y2="100" className="stroke-neon-cyan path-draw" style={{ animationDelay: '0.2s' }} />
-                    <line x1="25" y1="110" x2="55" y2="110" className="stroke-neon-cyan path-draw" style={{ animationDelay: '0.4s' }} />
+                  <g>
+                    <rect x="40" y="80" width="40" height="40" rx="4" className="fill-surface stroke-white/20" />
+                    <line x1="45" y1="90" x2="75" y2="90" className="stroke-neon-cyan" />
+                    <line x1="45" y1="100" x2="75" y2="100" className="stroke-neon-cyan" />
+                    <line x1="45" y1="110" x2="75" y2="110" className="stroke-neon-cyan" />
                   </g>
 
                   {/* Flow Line 1 */}
-                  <path d="M 60 100 Q 100 100, 100 100" className="stroke-neon-cyan path-draw" />
+                  <path d="M 80 100 L 140 100" className="stroke-neon-cyan" />
                   
                   {/* Pulse Dot moving along path 1 */}
-                  <circle r="3" fill="#00F0FF">
-                    <animateMotion dur="2s" repeatCount="indefinite" path="M 60 100 Q 100 100, 100 100" />
+                  <circle r="2.5" fill="#00F0FF">
+                    <animateMotion dur="2s" repeatCount="indefinite" path="M 80 100 L 140 100" />
                   </circle>
 
                   {/* 2. Battery Storage Node (Center) */}
-                  <g className="group-hover:drop-shadow-[0_0_10px_#8A2BE2] transition-all duration-500" style={{ transform: 'translateX(80px)' }}>
-                     <rect x="20" y="70" width="50" height="60" rx="4" className="fill-surface stroke-neon-purple/50" />
-                     <rect x="35" y="65" width="20" height="5" rx="2" className="fill-neon-purple/50" />
-                     <path d="M 35 110 L 35 80 L 55 80" className="stroke-neon-purple path-draw" strokeDasharray="3 3"/>
+                  <g style={{ transform: 'translateX(100px)' }}>
+                     <rect x="40" y="70" width="40" height="60" rx="4" className="fill-surface stroke-neon-purple/50" />
+                     <rect x="50" y="65" width="20" height="5" rx="2" className="fill-neon-purple/50" />
                      {/* Battery level fill */}
-                     <rect x="25" y="90" width="40" height="35" className="fill-neon-purple/30 animate-pulse" rx="2" />
+                     <rect x="45" y="90" width="30" height="35" className="fill-neon-purple/30 animate-pulse" rx="2" />
                   </g>
 
                   {/* Flow Line 2 */}
-                  <path d="M 150 100 Q 200 100, 240 100" stroke="url(#flowGlow)" className="path-draw" />
+                  <path d="M 180 100 L 260 100" stroke="url(#flowGlow)" />
                   
                   {/* Pulse Dot moving along path 2 */}
-                  <circle r="3" fill="#8A2BE2">
-                    <animateMotion dur="2s" repeatCount="indefinite" path="M 150 100 Q 200 100, 240 100" />
+                  <circle r="2.5" fill="#8A2BE2">
+                    <animateMotion dur="2s" repeatCount="indefinite" path="M 180 100 L 260 100" />
                   </circle>
 
                   {/* 3. Building / Output Node (Right) */}
-                  <g className="group-hover:drop-shadow-[0_0_10px_#3B82F6] transition-all duration-500" style={{ transform: 'translateX(220px)' }}>
+                  <g style={{ transform: 'translateX(240px)' }}>
                      <path d="M 20 120 L 20 60 L 40 40 L 60 60 L 60 120 Z" className="fill-surface stroke-blue-500/50" />
                      {/* Windows */}
-                     <rect x="30" y="70" width="8" height="8" className="fill-blue-400/40 animate-pulse" style={{ animationDelay: '0.1s' }} />
-                     <rect x="42" y="70" width="8" height="8" className="fill-blue-400/40 animate-pulse" style={{ animationDelay: '0.3s' }} />
-                     <rect x="30" y="85" width="8" height="8" className="fill-blue-400/40 animate-pulse" style={{ animationDelay: '0.5s' }} />
-                     <rect x="42" y="85" width="8" height="8" className="fill-blue-400/40 animate-pulse" style={{ animationDelay: '0.7s' }} />
-                     <rect x="30" y="100" width="8" height="8" className="fill-blue-400/40 animate-pulse" style={{ animationDelay: '0.9s' }} />
-                     <rect x="42" y="100" width="8" height="8" className="fill-blue-400/40 animate-pulse" style={{ animationDelay: '1.1s' }} />
+                     <rect x="30" y="70" width="6" height="6" className="fill-blue-400/40" />
+                     <rect x="44" y="70" width="6" height="6" className="fill-blue-400/40" />
+                     <rect x="30" y="85" width="6" height="6" className="fill-blue-400/40" />
+                     <rect x="44" y="85" width="6" height="6" className="fill-blue-400/40" />
+                     <rect x="30" y="100" width="6" height="6" className="fill-blue-400/40" />
+                     <rect x="44" y="100" width="6" height="6" className="fill-blue-400/40" />
                   </g>
                   
                   {/* Labels */}
-                  <text x="40" y="140" fill="#8B8D98" fontSize="10" textAnchor="middle" className="font-mono">SOLAR</text>
-                  <text x="125" y="150" fill="#8B8D98" fontSize="10" textAnchor="middle" className="font-mono">BESS</text>
-                  <text x="260" y="140" fill="#8B8D98" fontSize="10" textAnchor="middle" className="font-mono">ASSET</text>
+                  <text x="60" y="140" fill="#8B8D98" fontSize="10" textAnchor="middle" className="font-mono font-bold tracking-widest text-[#FFF]">SOLAR</text>
+                  <text x="160" y="150" fill="#8B8D98" fontSize="10" textAnchor="middle" className="font-mono font-bold tracking-widest text-[#FFF]">BESS</text>
+                  <text x="280" y="140" fill="#8B8D98" fontSize="10" textAnchor="middle" className="font-mono font-bold tracking-widest text-[#FFF]">ASSET</text>
 
                </svg>
             </div>
