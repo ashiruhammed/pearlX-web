@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-neon-purple/30 selection:text-neon-cyan;
+  }
+}
+
+/* Global Noise overlay to keep the texture */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* Stripe-inspired Mesh Gradient Background */
+.mesh-bg {
+  background: radial-gradient(circle at top left, rgba(138, 43, 226, 0.15), transparent 40%),
+              radial-gradient(circle at bottom right, rgba(0, 240, 255, 0.1), transparent 40%),
+              radial-gradient(circle at center, rgba(29, 78, 216, 0.1), transparent 50%),
+              #05050A;
+  background-size: 200% 200%;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  @apply bg-surface/40 backdrop-blur-xl border border-white/5 shadow-2xl;
+}
+
+/* Glowing Border for Cards */
+.glow-card {
+  position: relative;
+  border-radius: 1.5rem;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.0));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.glow-card:hover::before {
+  background: linear-gradient(to bottom right, rgba(0, 240, 255, 0.5), rgba(138, 43, 226, 0.2));
+  transition: background 0.5s ease;
+}
+
+/* Button Micro-interactions */
+.btn-primary {
+  @apply relative overflow-hidden bg-white text-background px-6 py-3 rounded-full font-sans font-medium text-sm transition-transform duration-300 hover:scale-[1.02];
+}
+
+.btn-primary::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-0 transition-opacity duration-300 pointer-events-none mix-blend-multiply;
+}
+.btn-primary:hover::after {
+  @apply opacity-20;
+}
+
+.link-lift {
+  @apply transition-all duration-300 inline-block hover:text-white hover:-translate-y-[1px];
+}
+
+.glass-nav {
+  @apply bg-background/80 backdrop-blur-md border-b border-white/5;
+}
+
+/* SVG Line Draw Animation Class */
+.path-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 4s cubic-bezier(0.8, 0, 0.2, 1) forwards infinite;
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 1000; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -1000; }
+}
